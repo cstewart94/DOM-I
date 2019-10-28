@@ -6,6 +6,8 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "nav-item-7": "One",
+    "nav-item-8": "Two",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -44,6 +46,8 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
+
+
 //NAV
 const allNav=document.querySelectorAll('nav a');
 allNav[0].textContent=siteContent.nav['nav-item-1'];
@@ -52,6 +56,7 @@ allNav[2].textContent=siteContent.nav['nav-item-3'];
 allNav[3].textContent=siteContent.nav['nav-item-4'];
 allNav[4].textContent=siteContent.nav['nav-item-5'];
 allNav[5].textContent=siteContent.nav['nav-item-6'];
+
 
 //CTA
 const ctaText=document.querySelector('.cta .cta-text h1');
@@ -62,6 +67,7 @@ ctaButton.textContent=siteContent.cta['button'];
 
 const ctaImg=document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+
 
 //Main Content
 const mainContent=document.querySelectorAll('.main-content .top-content .text-content');
@@ -91,6 +97,25 @@ contactP[0].textContent=siteContent['contact']['address'];
 contactP[1].textContent=siteContent['contact']['phone'];
 contactP[2].textContent=siteContent['contact']['email'];
 
+
 //Footer
 const bottomFooter=document.querySelector('footer p');
 bottomFooter.textContent=siteContent['footer']['copyright'];
+
+//Task 3: New Content
+const navColor=document.querySelectorAll('header nav a');
+navColor.forEach(element=>{
+  element.style.color='green';
+});
+
+const newNav=document.querySelector('nav');
+
+const navOne=document.createElement('a');
+navOne.setAttribute('href', '#');
+navOne.textContent="One";
+newNav.prepend(navOne);
+
+const navTwo=document.createElement('a');
+navTwo.setAttribute('href', '#');
+navTwo.textContent="Two";
+newNav.appendChild(navTwo);
