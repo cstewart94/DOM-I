@@ -6,8 +6,6 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
-    "nav-item-7": "One",
-    "nav-item-8": "Two",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -32,7 +30,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -60,10 +58,10 @@ allNav[5].textContent=siteContent.nav['nav-item-6'];
 
 //CTA
 const ctaText=document.querySelector('.cta .cta-text h1');
-ctaText.textContent=siteContent.cta['h1'];
+ctaText.innerHTML=siteContent['cta']['h1'].replace(/ /g, '<br>');
 
 const ctaButton=document.querySelector('.cta .cta-text button');
-ctaButton.textContent=siteContent.cta['button'];
+ctaButton.textContent=siteContent['cta']['button'];
 
 const ctaImg=document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
@@ -93,7 +91,7 @@ const contactH4=document.querySelector('.contact h4');
 contactH4.textContent=siteContent['contact']['contact-h4'];
 
 const contactP=document.querySelectorAll('.contact p');
-contactP[0].textContent=siteContent['contact']['address'];
+contactP[0].innerHTML=siteContent['contact']['address']/*.replace(/ /, '<br>')*/;
 contactP[1].textContent=siteContent['contact']['phone'];
 contactP[2].textContent=siteContent['contact']['email'];
 
